@@ -1,20 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <html>
 	<head>
-	 	<title>°Ô½ÃÆÇ</title>
+	 	<title>ê²Œì‹œíŒ</title>
 	</head>
 	<body>
 	
 		<div id="root">
 			<header>
-				<h1> °Ô½ÃÆÇ</h1>
+				<h1> ê²Œì‹œíŒ</h1>
 			</header>
 			<hr />
 			 
 			<nav>
-			  È¨ - ±Û ÀÛ¼º
+			  í™ˆ - ê¸€ ìž‘ì„±
 			</nav>
 			<hr />
 			
@@ -24,23 +23,24 @@
 						<tbody>
 							<tr>
 								<td>
-									<label for="title">Á¦¸ñ</label><input type="text" id="title" name="title" />
+									<label for="title">ì œëª©</label><input type="text" id="title" name="title" />
 								</td>
 							</tr>	
 							<tr>
 								<td>
-									<label for="content">³»¿ë</label><textarea id="content" name="content" ></textarea>
+									<label for="content">ë‚´ìš©</label><textarea id="content" name="content" ></textarea>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<label for="writer">ÀÛ¼ºÀÚ</label><input type="text" id="writer" name="writer" />
+									<label for="writer">ìž‘ì„±ìž</label><input type="text" id="writer" name="writer" />
 								</td>
 							<tr>
 								<td>						
-									<button type="submit">ÀÛ¼º</button>
+									<button type="submit">ìž‘ì„±</button>
 								</td>
-							</tr>			
+							</tr>
+									
 						</tbody>			
 					</table>
 				</form>
