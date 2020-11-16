@@ -25,10 +25,20 @@
 		ORDER BY BNO DESC
 </select>
 
+<select id="read" parameterType="int" resultType="com.board.vo.BoardVO">
+	SELECT BNO
+			, TITLE
+			, WRITER
+			, CONTENT
+			, REGDATE
+		FROM MP_BOARD
+		WHERE BNO = #{bno}
+</select>
+
 <update id="update" parameterType="com.board.vo.BoardVO">
  	UPDATE MP_BOARD
  		SET TITLE = #{title},
- 			CONTENT = #{content},
+ 			CONTENT = #{content}
  		WHERE BNO = #{bno}
 </update>
 
