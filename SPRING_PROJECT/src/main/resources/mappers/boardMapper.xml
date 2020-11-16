@@ -16,14 +16,14 @@
    
 </insert>
 
-<select id="list" resultType="com.board.vo.BoardVO">
+<!--  <select id="list" resultType="com.board.vo.BoardVO">
 	SELECT BNO
 			, TITLE
 			, WRITER
 			, REGDATE
 		FROM MP_BOARD
 		ORDER BY BNO DESC
-</select>
+</select> -->
 
 <select id="read" parameterType="int" resultType="com.board.vo.BoardVO">
 	SELECT BNO
@@ -47,5 +47,34 @@
 	FROM MP_BOARD
 	WHERE BNO=#{bno}
 </delete>
+
+<select id="listPage" resultType="com.board.vo.BoardVO" parameterType="com.board.vo.Criteria">
+		SELECT  BNO, 
+		        TITLE, 
+		        CONTENT,
+		        WRITER, 
+		        REGDATE
+		 FROM ( 
+		        SELECT BNO, 
+		               TITLE, 
+		               CONTENT, 
+		               WRITER, 
+		               REGDATE, 
+		               ROW_NUMBER() OVER(ORDER BY BNO DESC) AS RNUM
+		         FROM MP_BOARD 
+		                       ) MP
+		WHERE RNUM BETWEEN #{rowStart} AND #{rowEnd}
+		ORDER BY BNO DESC
+</select>
+	
+<select id="listCount" resultType="int">
+	<![CDATA[
+		SELECT COUNT(BNO)
+		  FROM MP_BOARD
+		 WHERE BNO > 0
+	]]>
+</select>
+
+
    
 </mapper>
